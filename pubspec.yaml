@@ -1,0 +1,31 @@
+name: bdmap
+description: A new Flutter plugin.
+version: 0.0.1
+author: kalecgos
+homepage: https://
+publish_to: none
+
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+.
+  plugin:
+    platforms:
+      android:
+        package: com.reemii.bdmap
+        pluginClass: BdmapPlugin
+      ios:
+        pluginClass: BdmapPlugin
+      macos:
+        pluginClass: BdmapPlugin
+
