@@ -1,7 +1,7 @@
 bdmap
 2.10
-file:///Users/yyg/Documents/panda/driver/plugins/bdmap/
-file:///Users/yyg/Documents/panda/driver/plugins/bdmap/lib/
+file:///Users/yyg/Documents/panda/plugins/bdmap/
+file:///Users/yyg/Documents/panda/plugins/bdmap/lib/
 async
 2.12
 file:///Users/yyg/flutter/.pub-cache/hosted/pub.flutter-io.cn/async-2.6.1/
