@@ -60,25 +60,25 @@ public class BDLocationClient {
 
         //开启前台定位服务：
         //获取一个Notification构造器
-        createNotificationChannel(context);
+        // createNotificationChannel(context);
 
-        Notification.Builder builder;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            builder = new Notification.Builder(context, CHANNEL_ID);
-        } else {
-            builder = new Notification.Builder(context);
-        }
+        // Notification.Builder builder;
+        // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        //     builder = new Notification.Builder(context, CHANNEL_ID);
+        // } else {
+        //     builder = new Notification.Builder(context);
+        // }
 
-        Intent nfIntent = Intent.makeMainActivity(new ComponentName("tech.zhuoguo.trip", "MainActivity"));
-        builder.setContentIntent(PendingIntent.getActivity(context, 0, nfIntent, 0)) // 设置PendingIntent
-                .setContentTitle("百度定位正在后台定位") // 设置下拉列表里的标题
-                .setSmallIcon(R.drawable.logo) // 设置状态栏内的小图标
-                .setContentText("后台定位通知") // 设置上下文内容
-                .setAutoCancel(true)
-                .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
-        Notification notification = builder.build();
-        notification.defaults = Notification.DEFAULT_SOUND; //设置为默认的声音
-        mLocationClient.enableLocInForeground(1001, notification);// 调起前台定位
+        // Intent nfIntent = Intent.makeMainActivity(new ComponentName("tech.zhuoguo.trip", "MainActivity"));
+        // builder.setContentIntent(PendingIntent.getActivity(context, 0, nfIntent, 0)) // 设置PendingIntent
+        //         .setContentTitle("百度定位正在后台定位") // 设置下拉列表里的标题
+        //         .setSmallIcon(R.drawable.logo) // 设置状态栏内的小图标
+        //         .setContentText("后台定位通知") // 设置上下文内容
+        //         .setAutoCancel(true)
+        //         .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
+        // Notification notification = builder.build();
+        // notification.defaults = Notification.DEFAULT_SOUND; //设置为默认的声音
+        // mLocationClient.enableLocInForeground(1001, notification);// 调起前台定位
     }
 
     private void createNotificationChannel(Context context) {
@@ -88,8 +88,6 @@ public class BDLocationClient {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
-            // Register the channel with the system; you can't change the importance
-            // or other notification behaviors after this
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
